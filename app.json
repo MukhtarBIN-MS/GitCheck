@@ -1,16 +1,14 @@
 {
   "expo": {
-    "name": "Mapp",
-    "slug": "Mapp",
+    "name": "GitCheck",
+    "slug": "GitCheck",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/Images/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
+          "image": "./src/Images/icon.png"
+         },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -26,6 +24,7 @@
         "backgroundColor": "#FFFFFF"
       }
     },
+    
     "web": {
       "favicon": "./assets/favicon.png"
     }

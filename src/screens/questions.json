@@ -1,0 +1,105 @@
+{
+    "questions": [
+        {
+            "questionText": "Far-right protestors tried to storm the Parliament building in which country?",
+            "answers": [
+                {
+                    "label": "Australia",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "Britain",
+                    "value": 0,
+                    "option":"B"
+                },
+                {
+                    "label": "France",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "Germany",
+                    "value": 1,
+                    "option": "D"
+                }
+            ]
+        },
+        {
+            "questionText": "Why did Shinzo Abe, prime minister of Japan, resign from office?",
+            "answers": [
+                {
+                    "label": "An extramarital affair",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "Fraud",
+                    "value": 0,
+                    "option":"B"
+                    
+                },
+                {
+                    "label": "Illness",
+                    "value": 1,
+                    "option":"C"
+                },
+                {
+                    "label": "Protests",
+                    "value": 0,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": "What did two commercial jet pilots reported seeing in the busy airspace near Los Angeles International Airport?",
+            "answers": [
+                {
+                    "label": "An attack drone",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "A man with a jetpack",
+                    "value": 1,
+                    "option":"B"
+                },
+                {
+                    "label": "A girl attached to a kite",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "A U.F.O.",
+                    "value": 0,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": "After more than seven decades of absence, jaguars are being reintroduced into the wetlands of which country?",
+            "answers": [
+                {
+                    "label": "Argentina",
+                    "value": 1,
+                    "option":"A"
+                },
+                {
+                    "label": "Belize",
+                    "value": 0,
+                    "option":"B"
+                },
+                {
+                    "label": "Colombia",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "Mexico",
+                    "value": 0,
+                    "option":"D"
+                }
+            ]
+        }
+    ]
+}
