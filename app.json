@@ -7,8 +7,8 @@
     "icon": "./src/Images/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-          "image": "./src/Images/icon.png"
-         },
+      "image": "./src/Images/icon.png"
+    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -16,17 +16,29 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.binms.gitcheck"
     },
     "android": {
+      "package": "com.binms.gitcheck",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       }
     },
-    
+    "owner": "binms",
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "fbe7249f-8a54-48fb-a744-d21ff3a0f8e3"
+      }
     }
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-9873658257388366~4290066045",
+    "ios_app_id": "ca-app-pub-9873658257388366~9215977719"
   }
 }

@@ -1,271 +1,182 @@
-import React, { useState } from "react";
-import {
-  View,
-  Button,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  SafeAreaView,
-  ActivityIndicator,
-  Alert,
-} from "react-native";
-import questions from "./questions.json";
-import QuesAnsPair from "./QuesAnsPair";
+import React from "react";
+import { Text, SafeAreaView, ScrollView, View, StyleSheet, TouchableOpacity } from "react-native";
 import Header from "../components/Header";
-import Colors from "./color";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-const Quiz = (props) => {
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const [showNext, setShowNext] = useState(false);
-  const [take, setTake] = useState(true);
-  const [score, setScore] = useState(0);
-  const [selected, setSelected] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [animating, setAnimating] = useState(true);
+const Stack = createStackNavigator();
 
-  const handleQuizTraversal = () => {
-    if (questionIndex === questions["questions"].length - 1) {
-      score < questions["questions"].length / 2
-        ? Alert.alert(
-            "Quiz Result",
-            "You score " +
-              score +
-              " out of " +
-              questions["questions"].length +
-              " please study well again",
-            [
-              {
-                text: "Ok",
-                onPress: () => setTake(true),
-                style: "cancel",
-              },
-              { text: "Quit", onPress: () => setTake(true) },
-            ]
-          )
-        : Alert.alert(
-            "Quiz Result",
-            " Great !! You score " +
-              score +
-              " out of " +
-              questions["questions"].length,
-            [
-              {
-                text: "Ok",
-                onPress: () => setTake(true),
-                style: "cancel",
-              },
-              { text: "Quit", onPress: () => setTake(true) },
-            ]
-          );
-
-      setQuestionIndex(0);
-      setShowNext(false);
-      setScore(0);
-      setSelected({});
-
-      return;
-    }
-    setQuestionIndex((questionIndex) => questionIndex + 1);
-    setShowNext(false);
-  };
-
-  const is_next = () => {
-    setShowNext(true);
-  };
-
-  const get_Score = (score) => {
-    setScore(score);
-  };
-
-  const getSelected = (selected) => {
-    setSelected(selected);
-  };
-  const Handle = ()=>{
-    setTake(false);
-    setLoading(true);
-  }
-  const Showloading = () => {
-    setTimeout(() => {
-      return (
-        <View
-          style={{
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Header />
-          <ActivityIndicator
-            animating={animating}
-            color="#900"
-            size="large"
-            style={{
-              alignItems: "center",
-              marginTop: 170,
-              marginBottom: 30,
-              justifyContent: "center",
-            }}
-          />
-          <Text style={styles.text}>{`Searching ........`}</Text>
-        </View>
-      );
-    }, 5000);
-    setAnimating(false);
-    setLoading(false);
-    setTake(false);
-  };
-
+const Learn = ({ navigation }) => {
   return (
-    <View style={styles.screen}>
-      {take ? (
-        <SafeAreaView>
-          <Header />
-          <View style={{ alignItems: "center", justifyContent: "center" }}>
-            <TouchableOpacity
-              style={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: 30,
-                backgroundColor: "#333",
-                padding: 10,
-                width: 150,
-                borderRadius: 190,
-                borderWidth: 1,
-                borderColor: Colors.primary,
-              }}
-              onPress={Handle}
-            >
-              <Text style={{ color: "#fff" }}>Take Quiz</Text>
-            </TouchableOpacity>
-          </View>
-        </SafeAreaView>
-      ) : loading ? (
-        <View
-          style={{
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Header />
-          <ActivityIndicator
-            animating={animating}
-            color="#900"
-            size="large"
-            style={{
-              alignItems: "center",
-              marginTop: 170,
-              marginBottom: 30,
-              justifyContent: "center",
-            }}
-          />
-          
-          <TouchableOpacity onPress={()=> setLoading(false)}><View style={styles.nwbtn}><Text style={styles.ready}>I'm ready</Text></View></TouchableOpacity>
-        </View>
-      ) : (
-        <>
-          <View style={styles.button}>
-            <TouchableOpacity style={styles.btn} onPress={() => setTake(true)}>
-              <Text style={{ fontWeight: "bold", color: "#fff" }}>Quit</Text>
-            </TouchableOpacity>
-          </View>
-          <QuesAnsPair
-            question={questions["questions"][questionIndex]["questionText"]}
-            index={questionIndex}
-            answers={questions["questions"][questionIndex]["answers"]}
-            is_next={is_next}
-            getScore={get_Score}
-            length={questions["questions"].length}
-            get_selected={getSelected}
-          />
-          <View style={styles.buttonContainer}>
-            <View style={styles.backButton}>
-              {(showNext && questionIndex > 0) ||
-              (selected[questionIndex] !== undefined && questionIndex > 0) ? (
-                <TouchableOpacity
-                  onPress={() => setQuestionIndex((index) => index - 1)}
-                  style={styles.nwbtn}
-                >
-                  <Text
-                    style={{
-                      fontFamily: "serif",
-                      fontWeight: "bold",
-                      color: "#fff",
-                    }}
-                  >
-                    Back
-                  </Text>
-                </TouchableOpacity>
-              ) : null}
+    <ScrollView>
+    <SafeAreaView style={styles.container}>
+      <Header />
+      <View style={styles.learnContainer}>
+        <View style={styles.lineItems}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Setup and Configuration")}
+          >
+            <View style={styles.innerContent}>
+              <MaterialCommunityIcons name="cog" color="#fff" size={25} />
+              <Text style={styles.text}>Setup and Config</Text>
             </View>
-            {showNext || selected[questionIndex] !== undefined ? (
-              <View>
-                <TouchableOpacity
-                  onPress={handleQuizTraversal}
-                  style={styles.nwbtn}
-                >
-                  <Text
-                    style={{
-                      fontFamily: "serif",
-                      fontWeight: "bold",
-                      color: "#fff",
-                    }}
-                  >
-                    {questionIndex === questions["questions"].length - 1
-                      ? "score "
-                      : "next"}
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            ) : null}
-          </View>
-        </>
-      )}
-    </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Getting and Creating projects")}
+          >
+            <View style={styles.innerContent}>
+              <MaterialCommunityIcons name="tablet" color="#fff" size={25} />
+              <Text style={styles.text}>Getting and Creating Projects</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.lineItems}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Basic Snapshooting")}
+          >
+            <View style={styles.innerContent}>
+              <MaterialCommunityIcons name="camera" color="#fff" size={25} />
+              <Text style={styles.text}>Basic Snapshotting</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Branching and Merging")}
+          >
+            <View style={styles.innerContent}>
+              <MaterialCommunityIcons
+                name="source-branch"
+                color="#fff"
+                size={25}
+              />
+              <Text style={styles.text}>Branching and Merging</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.lineItems}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Sharing and Updating Projects")}
+          >
+            <View style={styles.innerContent}>
+              <MaterialCommunityIcons
+                name="human-greeting-proximity"
+                color="#fff"
+                size={25}
+              />
+              <Text style={styles.text}>Sharing and Updating Projects</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Inspection and Comparison")}
+          >
+            <View style={styles.innerContent}>
+              <MaterialCommunityIcons
+                name="folder-search-outline"
+                color="#fff"
+                size={25}
+              />
+              <Text style={styles.text}>Inspection and Comparison</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.lineItems}>
+          <TouchableOpacity onPress={() => navigation.navigate("Patching")}>
+            <View style={styles.innerContent}>
+              <MaterialCommunityIcons
+                name="video-input-component"
+                color="#fff"
+                size={25}
+              />
+              <Text style={styles.text}>Patching</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigation.navigate("Debugging")}>
+            <View style={styles.innerContent}>
+              <MaterialCommunityIcons
+                name="chart-timeline-variant-shimmer"
+                color="#fff"
+                size={25}
+              />
+              <Text style={styles.text}>Debugging</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Commands")}
+        style={styles.docs}
+      >
+        <Text style={{ color: "#fff" }}>Git commands</Text>
+      </TouchableOpacity>
+      
+    </SafeAreaView>
+    </ScrollView>
   );
 };
 
+export default Learn;
+
 const styles = StyleSheet.create({
-  buttonContainer: {
+  container: {
+    marginTop: 5,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  learnContainer: {
+    marginTop: 5,
+    display: "flex",
+    flexDirection: "column",
+  },
+  lineItems: {
+    marginBottom: 2,
+    marginLeft:10,
     flexDirection: "row",
-    justifyContent: "center",
   },
-  backButton: {
+  innerContent: {
+    flexDirection: "column",
     marginRight: 10,
-  },
-  button: {
     alignItems: "center",
-    justifyContent: "center",
-    width: 100,
-    marginTop: 10,
-  },
-  btn: {
-    backgroundColor: "red",
-    padding: 10,
-    width: "65%",
-    marginVertical: 10,
-    alignItems: "center",
-    borderRadius: 5,
+    marginBottom: 5,
+    width: 160,
+    height: 100,
+    marginBottom: 20,
+    borderColor: "black",
+    backgroundColor: "#900",
+    borderStyle: "solid",
     borderWidth: 1,
-    borderColor: Colors.primary,
+    borderBottomWidth: 1,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderTopRightRadius: 10,
+    borderRadius: 50,
+    padding: 15,
+    borderRadius: 10,
   },
-  nwbtn: {
-    backgroundColor: Colors.primary,
-    padding: 10,
-    width: 150,
-    alignItems: "center",
-    borderRadius: 5,
+  text: {
+    color: "#fff",
+  },
+  docs: {
+    borderColor: "black",
+    backgroundColor: "#900",
+    borderStyle: "solid",
     borderWidth: 1,
-    borderColor: Colors.primary,
+    borderBottomWidth: 1,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderTopRightRadius: 10,
+    borderRadius: 50,
+    padding: 15,
+    borderRadius: 10,
+    width: 130,
+    height: 50,
   },
-  ready:{
-    alignItems: "center",
-    color:'#fff',
-    justifyContent:'center',
-    fontFamily:'serif',
-    fontSize:15,
-
-  }
 });
-
-export default Quiz;

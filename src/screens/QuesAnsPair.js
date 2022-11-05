@@ -31,7 +31,7 @@ const QuesAnsPair = (props) => {
         <Text style={styles.questionIndex}>Question {props.index + 1} / {questions["questions"].length} </Text>
         <Text style={styles.questionText}>{props.question}</Text>
       </View>
-      <View style={{ borderRadius: 5, borderWidth: 1, borderColor: Colors.primary, margin:15 }}>
+      <View style={{ borderRadius: 5, borderWidth: 1, borderColor: Colors.primary, margin:5}}>
         <View style={styles.selectedAnswerContainer}>
           <Text style={styles.selectedAnswer}>
             Selected Option:{" "}
@@ -51,8 +51,8 @@ const QuesAnsPair = (props) => {
                 style={styles.answer}
                 onPress={handleNext.bind(this, ans["option"], ans["value"])}
               >
-                <View>
-                  <Text style={styles.answerText}>{`${ans['option']} -> ${ans["label"]}`}</Text>
+                <View style={styles.dis}>
+                  <Text style={styles.answerText}>{`${ans['option']}:    ${ans["label"]}`}</Text>
                 </View>
               </TouchableOpacity>
             );
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: "85%",
     marginVertical: 10,
-    alignItems: "center",
+    alignItems: "flex-start",
     borderRadius: 5,
     borderWidth: 1,
     borderColor: Colors.primary,
@@ -98,9 +98,10 @@ const styles = StyleSheet.create({
   answerText: {
     fontSize: 13,
     color: "#fff",
-    fontFamily:'serif'
-
+    fontFamily:'serif',
+  
   },
+
   selectedAnswer: {
     fontSize: 14,
     color: Colors.primary,

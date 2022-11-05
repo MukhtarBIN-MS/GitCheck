@@ -38,12 +38,12 @@ const Splash = ({ user }) => {
           </View>
           <View style={styles.usernameLinkContainer}>
             <MaterialCommunityIcons
-              name="link-variant"
+              name="map-marker"
               color={color}
               size={25}
             />
             <Text style={{ fontSize: 13, marginLeft: 5, marginTop: 2 }}>
-              {user.html_url}
+            {user.location ? user.location : "No location provided"}
             </Text>
           </View>
         </View>
@@ -68,7 +68,7 @@ const Splash = ({ user }) => {
           </Text>
         </View>
         <View style={styles.locationContainer}>
-          <MaterialCommunityIcons name="map-marker" color={color} size={25} />
+          <MaterialCommunityIcons name="link-variant" color={color} size={25} />
           <Text
             style={{
               fontSize: 13,
@@ -77,7 +77,7 @@ const Splash = ({ user }) => {
               marginRight: 5,
             }}
           >
-            {user.location ? user.location : "No location provided"}
+            {user.html_url ? user.html_url : "No user link"}
           </Text>
         </View>
         <View style={styles.locationContainer}>

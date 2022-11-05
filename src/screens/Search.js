@@ -14,11 +14,11 @@ import Header from "../components/Header";
 import Icon from "react-native-vector-icons/FontAwesome";
 import ProfileInfo from "../components/User/ProfileInfo";
 import User from "../components/User/Users";
+import Splash from "./Splash";
 
 const SearchScreen = () => {
   const [query, setQuery] = useState("");
   const [user, setUser] = useState(null);
-  const [error, setError] = useState("null");
   const [loading, setLoading] = useState(false);
   const [animating, setAnimating] = useState(false);
 
@@ -33,9 +33,10 @@ const SearchScreen = () => {
         .then(setUser)
         .then(() => setLoading(false))
         .then(() => setAnimating(false))
-        .then(setQuery(""));
+        // .then(setQuery(""));
     }
   };
+
   useEffect(() => {
     fetchUsers;
   }, []);
@@ -53,6 +54,14 @@ const SearchScreen = () => {
             marginBottom: 10,
           }}
         >
+          <TouchableOpacity  onPress={fetchUsers}>
+           <Icon
+              style={{ marginTop: 5, marginRight: 7, marginLeft:3 }}
+              name="arrow-left"
+              size={30}
+              color="#900"
+            />
+            </TouchableOpacity>
           <TextInput
             style={{
               height: 40,
@@ -69,7 +78,7 @@ const SearchScreen = () => {
 
           <TouchableOpacity onPress={fetchUsers}>
             <Icon
-              style={{ marginTop: 5 }}
+              style={{ marginTop: 5, marginRight:3 }}
               name="search"
               size={30}
               color="#900"
@@ -94,16 +103,21 @@ const SearchScreen = () => {
              {`Searching ........`}
             </Text>
           </View>
-        ) : user ? (
-          <>
-            <View style={{ alignItems: "center" }}>
+        ) 
+        : user ? (
+          <> 
+          <View style={{alignItems:'center'}}>
               <Text
                 style={styles.resultMessage}
               >{`Found ${user.total_count} results`}</Text>
-            </View>
-            <User users_items={user.items} />
+          </View>
+          
+            <User  users_items={user.items} />
+          
           </>
-        ) : (
+        ) 
+          :
+        (
           <View
             style={{
               alignItems: "center",
@@ -125,6 +139,7 @@ export default SearchScreen;
 const styles = StyleSheet.create({
   resultMessage: {
     marginBottom: 20,
+    alignItems:'center',
     borderColor: "black",
     color: "#fff",
     backgroundColor: "green",

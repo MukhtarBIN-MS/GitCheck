@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
   usernames: {
     display: "flex",
     marginBottom: 20,
-    flexDirection: "row",
+    flexDirection: "",
     alignItems: "flex-start",
     justifyContent: "space-between",
   },

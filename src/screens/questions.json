@@ -1,105 +1,488 @@
 {
     "questions": [
         {
-            "questionText": "Far-right protestors tried to storm the Parliament building in which country?",
+            "questionText": "Git command .................... used to give tags to the specified commit.?",
             "answers": [
                 {
-                    "label": "Australia",
+                    "label": "git checkout [branch name]",
                     "value": 0,
                     "option":"A"
                 },
                 {
-                    "label": "Britain",
+                    "label": "git show [commit]",
                     "value": 0,
                     "option":"B"
                 },
                 {
-                    "label": "France",
-                    "value": 0,
+                    "label": "git tag [commitID]",
+                    "value": 1,
                     "option":"C"
                 },
                 {
-                    "label": "Germany",
-                    "value": 1,
+                    "label": "git rm [file]",
+                    "value": 0,
                     "option": "D"
                 }
             ]
         },
         {
-            "questionText": "Why did Shinzo Abe, prime minister of Japan, resign from office?",
+            "questionText": " What language is used in Git??",
             "answers": [
                 {
-                    "label": "An extramarital affair",
+                    "label": "PHP",
                     "value": 0,
                     "option":"A"
                 },
                 {
-                    "label": "Fraud",
+                    "label": "C++",
                     "value": 0,
                     "option":"B"
                     
                 },
                 {
-                    "label": "Illness",
+                    "label": "C",
                     "value": 1,
                     "option":"C"
                 },
                 {
-                    "label": "Protests",
+                    "label": "Github",
                     "value": 0,
                     "option":"D"
                 }
             ]
         },
         {
-            "questionText": "What did two commercial jet pilots reported seeing in the busy airspace near Los Angeles International Airport?",
+            "questionText": "The main objectives of Git are -?",
             "answers": [
                 {
-                    "label": "An attack drone",
+                    "label": "Speed",
                     "value": 0,
                     "option":"A"
                 },
                 {
-                    "label": "A man with a jetpack",
-                    "value": 1,
+                    "label": "Data recovery",
+                    "value": 0,
                     "option":"B"
                 },
                 {
-                    "label": "A girl attached to a kite",
+                    "label": "support for distributed non-linear workflows",
                     "value": 0,
                     "option":"C"
                 },
                 {
-                    "label": "A U.F.O.",
+                    "label": "All of the above",
+                    "value": 1,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": "GIT belongs to the............. generation of Version Control tools?",
+            "answers": [
+                {
+                    "label": "3rd",
+                    "value": 1,
+                    "option":"A"
+                },
+                {
+                    "label": "2nd",
+                    "value": 0,
+                    "option":"B"
+                },
+                {
+                    "label": "5th",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "4th",
                     "value": 0,
                     "option":"D"
                 }
             ]
         },
         {
-            "questionText": "After more than seven decades of absence, jaguars are being reintroduced into the wetlands of which country?",
+            "questionText": "Git is a .................... Version Control tool.?",
             "answers": [
                 {
-                    "label": "Argentina",
-                    "value": 1,
+                    "label": "Centralised",
+                    "value": 0,
                     "option":"A"
                 },
                 {
-                    "label": "Belize",
+                    "label": "Decentralised",
                     "value": 0,
+                    "option":"B"
+                }
+
+            ]
+        },
+        {
+            "questionText": "Which of these Git client commands creates a copy of the repository and a working directory in the client’s workspace.?",
+            "answers": [
+                {
+                    "label": "checkout",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "clone",
+                    "value": 1,
                     "option":"B"
                 },
                 {
-                    "label": "Colombia",
+                    "label": "import",
                     "value": 0,
                     "option":"C"
                 },
                 {
-                    "label": "Mexico",
+                    "label": "update",
+                    "value": 0,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": "Which one of the following is not part of the data structure of a Git repository??",
+            "answers": [
+                {
+                    "label": "Branch pointer",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "Body element",
+                    "value": 1,
+                    "option":"B"
+                },
+                {
+                    "label": "commit object",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "Head pointer",
+                    "value": 0,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": "The Git clone command does which of the following?",
+            "answers": [
+                {
+                    "label": "Makes local copy of the repository",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "Creates a working directory",
+                    "value": 0,
+                    "option":"B"
+                },
+                {
+                    "label": "Commits a new branch",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "Both 1 & 2",
+                    "value": 1,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": "If you want to make radical changes to your team’s project and don’t want to impact the rest of the team, you should implement your changes in -",
+            "answers": [
+                {
+                    "label": "the root",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "the tag",
+                    "value": 0,
+                    "option":"B"
+                },
+                {
+                    "label": "the trunk",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "None of the above",
+                    "value": 1,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": "In Git, if you want to make your local repository reflect changes that have been made in a remote (tracked) repository, you should run the pull command",
+            "answers": [
+                {
+                    "label": "true",
+                    "value": 1,
+                    "option":"A"
+                },
+                {
+                    "label": "false",
+                    "value": 0,
+                    "option":"B"
+                }
+    
+            ]
+        },
+        {
+            "questionText": "Which of the following command line environment is used for interacting with Git ?",
+            "answers": [
+                {
+                    "label": "Github",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "GitBoot",
+                    "value": 0,
+                    "option":"B"
+                },
+                {
+                    "label": "Git lab",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "Git bash",
+                    "value": 1,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": "Which Git command displays the patch representing each commit.?",
+            "answers": [
+                {
+                    "label": "git-branch",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "git remote-v",
+                    "value": 0,
+                    "option":"B"
+                },
+                {
+                    "label": "git log",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "git log-p",
+                    "value": 1,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": " _____________ command renames the current branch to <branch>",
+            "answers": [
+                {
+                    "label": "git remote rm",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "git branch -m",
+                    "value": 1,
+                    "option":"B"
+                },
+                {
+                    "label": "git branch -D (CAPS)",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "git rebase",
+                    "value": 0,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": "Git command to compare two specified branches",
+            "answers": [
+                {
+                    "label": "git diff",
+                    "value": 1,
+                    "option":"A"
+                },
+                {
+                    "label": "git merge",
+                    "value": 0,
+                    "option":"B"
+                },
+                {
+                    "label": "git blame -L",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "git push --tags",
+                    "value": 0,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": "Command to download all the objects and references from a specified repository",
+            "answers": [
+                {
+                    "label": "git config --list",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "git help",
+                    "value": 0,
+                    "option":"B"
+                },
+                {
+                    "label": "git fetch",
+                    "value": 1,
+                    "option":"C"
+                },
+                {
+                    "label": "git log -n",
+                    "value": 0,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": "Which command creates an empty Git repository in the specified directory?",
+            "answers": [
+                {
+                    "label": "git reset",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "git log",
+                    "value": 0,
+                    "option":"B"
+                },
+                {
+                    "label": "git init",
+                    "value": 1,
+                    "option":"C"
+                },
+                {
+                    "label": "git init --bare",
+                    "value": 0,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": " ___________________ removes untracked files from your working directory.",
+            "answers": [
+                {
+                    "label": "git commit",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "git clean",
+                    "value": 1,
+                    "option":"B"
+                },
+                {
+                    "label": "git clean -f",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "git reset",
+                    "value": 0,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": " ____________ command is useful for getting a high-level overview of the project history.",
+            "answers": [
+                {
+                    "label": "git log --oneline",
+                    "value": 1,
+                    "option":"A"
+                },
+                {
+                    "label": "git reset --hard",
+                    "value": 0,
+                    "option":"B"
+                },
+                {
+                    "label": "git log --author=",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "git rebase",
+                    "value": 0,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": "Which command defines the author email to be used for all commits by the current user.",
+            "answers": [
+                {
+                    "label": "git clean -f",
+                    "value": 0,
+                    "option":"A"
+                },
+                {
+                    "label": "git config --global user.email",
+                    "value": 1,
+                    "option":"B"
+                },
+                {
+                    "label": "git log --author=",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "git email--amend",
+                    "value": 0,
+                    "option":"D"
+                }
+            ]
+        },
+        {
+            "questionText": "Which Command is used to show limited number of commits?",
+            "answers": [
+                {
+                    "label": "git log -n",
+                    "value": 1,
+                    "option":"A"
+                },
+                {
+                    "label": "git fetch",
+                    "value": 0,
+                    "option":"B"
+                },
+                {
+                    "label": "git config",
+                    "value": 0,
+                    "option":"C"
+                },
+                {
+                    "label": "git status",
                     "value": 0,
                     "option":"D"
                 }
             ]
         }
+        
     ]
 }
